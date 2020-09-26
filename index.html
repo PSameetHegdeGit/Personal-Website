@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <script src="mainJavascript.js"></script>
 
 </head>
 <body>
@@ -22,7 +25,6 @@
         <h1>Hi! I'm Sameet Hegde. </h1>
         <p class="stagger">Nice to meet you!</p>
         <div>
-            <p>Resume</p>
             <p>Contact</p>
             <p><a href="https://github.com/PSameetHegdeGit">Github</a></p>
         </div>
@@ -58,41 +60,129 @@
             
     </section>
     <section id="projects">
+
         <h4>Projects</h4>
-        <div class="project">
-            <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
-            <div class="description">
-                <h5>News Aggregator</h5>
-                <p>This News Aggregates by keyword from various news sources</p>
-
-            </div>    
-        </div>
-        <div class="project">
-            <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
-            <div class="description">
-                <h5>Simplex</h5>
-                <p>Simulates the simplex algorithm. Uses the traditional simplex algorithm.
-                </p>
+        <div id="tabgroup">
+                <!-- Tab Buttons -->
+            <div>
+                <button class="tablink" onclick="openProject(event, 'newsaggregator')"> News Aggregator </button>
+                <button class="tablink" onclick="openProject(event, 'simplex')"> Simplex</button>
+                <button class="tablink" onclick="openProject(event, 'modelinghardyweinberg')"> Modeling Hardy Weinberg</button>
+                <button class= "tablink" onclick="openProject(event, 'capsheetautomation')"> Automating Cap Sheets </button>
             </div>
-        </div>
-        <div class="project">
-            <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
-            <div class="description">
-                <h5>Modeling Hardy Weinberg</h5>
-                <p>Models the Hardy Weinberg Equation. The Hardy Weinberg Equation is something
-                    in biology
-                </p>
+        
+            <div>
+                    <!-- Tab links -->
+                <div class="project" id="newsaggregator">
+                    <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
+                    <div class="description">
+                        <h5>News Aggregator</h5>
+                        <p> This news aggregator uses a external api NewsAPI to aggregate news sources by keyword. I 
+                            developed a frontend in Angular and a backend in Flask. Both are deployed on 
+                            Heroku. Rather than communicating via HTTP between the frontend and api directly, I chose a Flask backend in order
+                            to perform some analytics on the data and communicate with a MongoDB database (I use to store some user
+                            information). Additionally, although NewsAPI sends data in a JSON format anyway, I wanted to reformat the data 
+                            so that it would be easier to render this data into html. 
+                        </p>
 
-            </div>    
-        </div>
-        <div class="project">
-            <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
-            <div class="description">
-                <h5>CapSheet Automation</h5>
-                <p>Automates our capsheets for allocations meetings.</p>
+                        <div class="techstack">
+                            <p>
+                                Angular  |  Flask  |  MongoDB  | NewsAPI 
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/NewsAggregator_Frontend"><i class="fab fa-github"></i></a>  
+                            <a href="https://news-aggregator-frontendshab.herokuapp.com/options"><i class="fas fa-external-link-alt"></i></a>      
+                        </div>
+                    </div>    
+                </div>
+                <div class="project" id="simplex">
+                    <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
+                    <div class="description">
+                        <h5>Simplex</h5>
+                        <p>
+                            This project finds a vector that gives the optimal solution to a linear optimization problem. 
+                            The algorithm follows the traditional simplex algorithm and is programmed in python. The backend runs
+                            on a flask server deployed to Heroku. I developed a minimalistic user interface with vanilla Javascript, HTML, and CSS.
+                            The frontend is deployed as a static website on AWS. 
+                        </p>
+                        <p>More information on the simplex algorithm can be found here: 
+
+                            <a href="https://www.matem.unam.mx/~omar/math340/simplex-intro.html">https://www.matem.unam.mx/~omar/math340/simplex-intro.html</a>
+
+                        </p>
+                        <div class="techstack">
+                            <p>
+                                Javascript  |  HTML/CSS  |  Flask   
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/Simplex"><i class="fab fa-github"></i></a>  
+                            <a href="https://simplex-frontend.herokuapp.com/"><i class="fas fa-external-link-alt"></i></a>      
+
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="modelinghardyweinberg">
+                    <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
+                    <div class="description">
+                        <h5>Modeling Hardy Weinberg</h5>
+                        <p>
+                            This Unity game simulates the frequency of specific genotypes in a population over generations. In this world,
+                            we make several assumptions of the environment as well as the population such that the population's genotypic
+                            frequencies in some later generation stays consistent. This consistency is the Hardy Weinberg equilibrium.
+                            The Unity game is coded with c# and communicates with a Flask backend. This Flask backend takes several parameters
+                            from the game and uses these values to determine a random genotypic frequency and the changes in this genotypic frequency
+                            over time (these frequencies eventually reach the Hardy Weinberg Equilibrium).
+                        </p>
+                        <p>
+                            More information on the Hardy Weinberg equilibrium can be found here:
+                            <a href="https://www.nature.com/scitable/definition/hardy-weinberg-equilibrium-122/">https://www.nature.com/scitable/definition/hardy-weinberg-equilibrium-122/</a>
+                        </p>
+                        <div class="techstack">
+                            <p>
+                                Unity  |  C#  |  Flask   
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/ModelingHardyWeinberg-UnityGame"><i class="fab fa-github"></i></a>  
+                        </div>
+
+                    </div>    
+                </div>
+                <div class="project" id="capsheetautomation">
+                    <iframe src="https://www.youtube.com/watch?v=OCGoTiV4kbM" frameborder="0"></iframe>
+                    <div class="description">
+                        <h5>CapSheet Automation</h5>
+                        <p>These automation scripts implement logic to grab data from a raw unorganized excel file
+                            and populate a formatted sheet. The scripts are entirely coded in python. 
+                            I used the library Openpyxl to grab data from the raw data file and populate the formatted sheet.
+                            I used the library Xlwings to duplicate a formatted sheet with all style and formatting retained from the duplicated
+                            sheet retained. I also created a simple python UI using the library Tkinter. 
+                        </p>
+
+                        <div class="techstack">
+                            <p>
+                                Python  |  Openpyxl | Xlwings | Tkinter  
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/Simplex"><i class="fab fa-github"></i></a>  
+                        </div>
+                    </div>
+                    
+                </div>
+
             </div>
+            
         </div>
+        
 
+       
 
 
     </section>

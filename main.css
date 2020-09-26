@@ -1,3 +1,8 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
@@ -80,23 +85,63 @@ section{
 
 }
 
-#projects .project p{
-    max-width: 500px;
+#tabgroup{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-#projects .project{
+
+.tablink{
+    border: none;
+    background:none;
+    font-size: 20px;
+    display: block;
+
+    margin-bottom: 30px;
+}
+
+.tablink:hover{
+    color: rgb(115, 144, 204);
+}
+
+.project{
+  
+    animation: fadeEffect 2s;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 80px;
+    display: none;
     
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+
+.project p{
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 35px;
 }
 
 .project iframe{
     margin-right: 40px;
 }
 
+.techstack{
+    display: flex;
+    justify-content: center;
+}
 
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px;
+}
 
 
 #preferences{
@@ -105,4 +150,5 @@ section{
     margin-bottom: 200px;
 
 }
+
 
