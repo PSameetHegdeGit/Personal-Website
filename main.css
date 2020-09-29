@@ -86,8 +86,8 @@ section{
 }
 
 #tabgroup{
+    margin-top: 80px;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -151,4 +151,8 @@ section{
 
 }
 
+.description h5{
+    margin-top: 0px;
+
+}
 
