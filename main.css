@@ -11,12 +11,23 @@ body{
 }
 
 #navbar{
+
     position: absolute;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 8px;
     font-size: 22px;
     top: 0;
     left: 0;
+    background: transparent;
+
+}
+
+#navbar ul{
+    display:flex;
+}
+
+#navbar ul li{
+    padding-right: 30px;
 }
 
 #navbar ul li{
@@ -70,20 +81,11 @@ a{
 section{
     font-size: 30px;
     font-weight: 100;
-}
-
-#aboutme{
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 200px;
 }
 
-#projects{
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 200px;
-
-}
 
 #tabgroup{
     margin-top: 80px;
@@ -128,6 +130,12 @@ section{
     line-height: 35px;
 }
 
+.project ul li{
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
 .project iframe{
     margin-right: 40px;
 }
@@ -144,12 +152,6 @@ section{
 }
 
 
-#preferences{
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 200px;
-
-}
 
 .description h5{
     margin-top: 0px;
