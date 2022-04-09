@@ -42,7 +42,7 @@
         <h1>Hi! I'm Sameet Hegde. </h1>
         <p class="stagger">Nice to meet you!</p>
         <div>
-            <p>Contact</p>
+            <p><a href="https://www.linkedin.com/in/sameet-hegde-204557138/"></a> LinkedIn</p>
             <p><a href="https://github.com/PSameetHegdeGit">Github</a></p>
         </div>
     </header>
@@ -51,28 +51,21 @@
 
         <h4>About Me</h4>
         <p>
-            I am a senior at Rutgers University studying computer science and mathematics.
-            I'm currently looking for full time opportunities in software engineering. 
-        </p>
-
-
-        <p>
-
-            In my time at Rutgers, I've assumed roles in a variety of sectors. As a Development intern at Spectrum360, a nonprofit organization that serves children, 
-            adolescents, young adults, and adults on the autism spectrum, I developed technologies that would help in coordinating events. 
-            As a Research Assistant for a lab in my university's Psychology department, I created programmatic solutions to reduce workload and create 
-            visualizations. As a software engineering intern at Cigna, I developed
-            new features to automate tasks for developers at the company. I've also served as treasurer for my university's financial
-            branch, programming coordinator for my university's primary prehealth club, and as a mentor to incoming students at Rutgers Honors College.
+            I am a first year software engineer who strives to learn the art of writing clean and maintainable code. 
+            In learning about clean code design, I actively read material on design principles, especially those relevant to object-oriented programming languages.
+            My technical interests include distributed systems engineering, and I design data intensive applications in my free time.
         </p>
         <p>
-           No matter the role or the business, I always want to find new ways to incorporate technology. Currently, I'm still interning at 
-           Cigna. I'm also working on an app that I hope will improve student engagement at Rutgers, and
-           I'm further exploring data sciences by learning more about pandas, numpy, statistics, and data visualization.
+            After graduating Rutgers University New Brunswick with a B.S. in Computer Science and a minor in Mathematics, I joined Silverwork Solutions,
+            a fintech startup specializing in robotic process automation. It is a challenging and interesting place to work, and the problems I tackle 
+            have helped me grow as an engineer. 
         </p>
         <p>
-            Apart from coding, I like soccer, going to the gym, playing piano, and have recently gotten into cooking as well.
-            I'm also training for a marathon!
+            Apart from day to day programming, I enjoy fitness, soccer, piano, and cooking. I am also a tutor at Tutoring Chicago where I teach 5th grade Math
+            and English. I also hope to train for a half marathon and partake in a solo backpacking trip to Europe!
+        </p>
+        <p>
+            I am looking to connect with people to talk about the technology space. Feel free to reach out to me on LinkedIn. 
         </p>
             
     </section>
@@ -82,6 +75,9 @@
         <div id="tabgroup">
                 <!-- Tab Buttons -->
             <div>
+                <button class="tablink" onclick="openProject(event, 'lsm-storage-engine')"> LSM Storage Engine </button>
+                <button class="tablink" onclick="openProject(event, 'p2p-distributed-hashing')"> P2P Distributed Hashing </button>
+                <button class="tablink" onclick="openProject(event, 'collision-detection')"> Collision Detection and Resolution in Unity </button>
                 <button class="tablink" onclick="openProject(event, 'newsaggregator')"> News Aggregator </button>
                 <button class="tablink" onclick="openProject(event, 'simplex')"> Simplex</button>
                 <button class="tablink" onclick="openProject(event, 'modelinghardyweinberg')"> Modeling Hardy Weinberg</button>
@@ -89,7 +85,69 @@
             </div>
         
             <div>
-                    <!-- Tab links -->
+                <!-- Tab links -->
+                <div class="project" id="lsm-storage-engine">
+                    <div class="description">
+                        <h5>LSM Storage Engine</h5>
+                        <p> I implemented a log-structured merge tree based storage engine. A memtable for in memory storage was used. 
+                            I provided three options for memtable representation: AVL tree, red black tree, and binary search tree. After a memtable size limit was reached,
+                            the memtable was flushed into a segment file stored on disk. Periodically, segment files would be compacted and merged to remove 
+                            duplicate data entries, which thereby reduced disk memory usage. Additionally a write ahead log was implemented to backup in-memory memtable in the case 
+                            of a crash. 
+                        </a>
+                        </p>
+
+                        <div class="techstack">
+                            <p>
+                                Java
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/Implementation-of-LSM-Storage-Engine"><i class="fab fa-github"></i></a>  
+                        </div>
+                    </div>    
+                </div>
+                <div class="project" id="p2p-distributed-hashing">
+                    <div class="description">
+                        <h5>P2P Distributed Hashing</h5>
+                        <p> I designed a simple full connected peer to peer network with a multi-threaded broadcast algorithm
+                            for efficient data transmission across nodes in network. Additionally, I distributed a hash table across the nodes in my network 
+                            and then implemented Chord, a lookup protocol based on <a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">"A Scalable Peer-to-peer Lookup Protocol
+                            for Internet Applications" Stoica, Morris </a>
+                        </p>
+
+                        <div class="techstack">
+                            <p>
+                                Java
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/Peer-to-Peer-Distributed-Hashing"><i class="fab fa-github"></i></a>  
+                        </div>
+                    </div>    
+                </div>
+                <div class="project" id="collision-detection">
+                    <div class="description">
+                        <h5>Collision Detection and Resolution</h5>
+                        <p> We randomly generated two dimensional prisms over a grid. We then used the GJK algorithm, based on taking the Minkowski difference and triple cross product of prisms,
+                            to find intersections between them. For those prisms that have an intersection, we found the minimal vector needed to separate intersecting prisms.
+                            This was based on the EPA algorithm. We completed this project in order to understand fundamental mechanics of collision detection and separation in video games. 
+
+                        </p>
+
+                        <div class="techstack">
+                            <p>
+                                Unity  |  C#
+                            </p>
+                        </div>
+                        
+                        <div class="icons">
+                            <a href="https://github.com/PSameetHegdeGit/collisions"><i class="fab fa-github"></i></a>  
+                        </div>
+                    </div>    
+                </div>
                 <div class="project" id="newsaggregator">
                     <div class="description">
                         <h5>News Aggregator</h5>
@@ -202,6 +260,7 @@
         <div id="tabgroup">
                 <!-- Tab Buttons -->
             <div>
+                <button class="tablink" onclick="openProject(event, 'silverwork-solutions')"> Silverwork Solutions </button>
                 <button class="tablink" onclick="openProject(event, 'Cigna')"> Cigna </button>
                 <button class="tablink" onclick="openProject(event, 'Rutgers')">Psychology Department, Rutgers</button>
                 <button class="tablink" onclick="openProject(event, 'Spectrum360')"> Spectrum 360</button>
@@ -209,10 +268,40 @@
         
             <div>
                     <!-- Tab links -->
+                <div class="project" id="silverwork-solutions">
+                    <div class="description">
+                        <h5>Software Engineer </h5>
+                        <p>July 2021 - Present | Chicago, Illinois</p>
+                        <ul>
+                            <li>
+                                Built feature sets for robust .NET programs that automated processes in the mortgage industry, averaging thousands of transactions daily
+                            </li>
+                            <li>
+                                Designed, tested, and deployed wrapper libraries around FlaUI automation library to simulate human-level behaviors
+                            </li>
+                            <li>
+                                Identified and migrated functionalities from client-specific implementations to shared packages
+                            </li>
+                            <li>
+                                Refactored legacy applications based on SOLID principles and OOP design patterns to promote testability, maintainability, and scalability
+                            </li>
+                            <li>
+                                Reduced processing time of workflows by establishing safeguards against race conditions during parallel execution of bots
+                            </li>
+                            <li>
+                                Established and expanded unit testing projects for several applications with NUnit framework and .NET mocking library Moq
+                            </li>
+                            <li>
+                                Lead efforts in establishing a wiki and migrating technical documentation from Sharepoint into it
+                            </li>
+                        </ul>
+
+                    </div>    
+                </div>
                 <div class="project" id="Cigna">
                     <div class="description">
                         <h5>Application Development Intern </h5>
-                        <p>May 2020 - Present | Franklin Lakes, New Jersey</p>
+                        <p>May 2020 - November 2020 | Franklin Lakes, New Jersey</p>
                         <ul>
                             <li>
                                 In Groovy, developed build automation utilities in Jenkins CI/CD pipeline for mainframe SCM tool Endevor
@@ -278,11 +367,11 @@
         <h4>Preferences and Skills</h4>
         <div>
             <h6>Programming Languages:</h6>
-            <p>Java, Python, C, Javascript, GoLang, C#, HTML/CSS, SQL</p>
+            <p>C#, Java, Python, C, HTML/CSS/JavaScript, SQL</p>
         </div>
         <div>
             <h6>Databases, Frameworks, Other</h6>
-            <p>Angular, Flask, MongoDB, MySQL, Jenkins, Docker, Kubernetes, Unity, 
+            <p>.NET, Entity Framework, Angular, Flask, MongoDB, MySQL, Jenkins, Docker, Kubernetes, Unity, 
                 AWS EC2
             </p>
         </div>
